@@ -18,9 +18,9 @@ const ExperienciaProfesional = ({ experiencia = {}, isLast }) => {
                     <Icons name={icono} />
                 </div>
                 {/* Línea Vertical (solo si no es el último elemento) */}
-                {!isLast && (
+                {/* {!isLast && (
                     <div className="timeline-line bg-secondary"></div>
-                )}
+                )} */}
             </div>
 
             <div className="flex-grow-1 card bg-secondary-subtle border-0 shadow-lg mb-4" style={{ backgroundColor: '#212529 !important', borderColor: '#495057 !important' }}>
