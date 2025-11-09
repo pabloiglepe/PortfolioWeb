@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import Icons from './Icons';
+import CompetenciasProfesionales from './CompetenciasProfesionales';
 
-function SobreMi({ estaCentrado }) {
+function SobreMi({ estaCentrado, competenciasProfesionalesData = {} }) {
 
     const imagen = '/sobremi.svg';
 
@@ -16,14 +17,26 @@ function SobreMi({ estaCentrado }) {
 
                     {/* Columna de la Foto */}
                     <div className="col-12 col-md-4 text-center mb-4 mb-md-0">
-                        <div style={{ width: '150px', height: '150px', margin: '0 auto', border: '4px solid #007bff', borderRadius: '50%', overflow: 'hidden'}}>
-                            <img
-                                src={imagen}
-                                alt="Foto de perfil"
-                                className="img-fluid"
+                        <div style={{ width: '150px', height: '150px', margin: '0 auto', border: '4px solid #007bff', borderRadius: '50%', overflow: 'hidden' }}>
+                            <img src={imagen} alt="Foto de perfil" className="img-fluid"
                                 onError={(e) => { e.target.onerror = null; e.target.src = "/sobremierror.svg" }}
                                 style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                         </div>
+
+                        {/* BOTÓN DE DESCARGA DE CV (siempre visible) */}
+
+                        <p className="small text-light mt-4 mb-1">
+                            Descarga mi CV en formato PDF:
+                        </p>
+                        <div className="d-flex justify-content-center mt-4 w-100">
+                            <a href='/CV_Pablo_Iglesias_Peral_06_10_25.pdf' download="CV_Pablo_Iglesias_Peral_06_10_25.pdf"
+                                className="p-2 rounded-circle bg-secondary text-white shadow-lg"
+                                style={{ width: '40px', height: '40px' }}>
+
+                                <Icons name="download" style={{ width: '18px', height: '18px' }} />
+                            </a>
+                        </div>
+
                     </div>
 
                     {/* Columna de Texto */}
@@ -37,6 +50,8 @@ function SobreMi({ estaCentrado }) {
                             de microservicios basados en la nube. Mi enfoque es siempre la usabilidad,
                             el rendimiento y la entrega de valor.
                         </p>
+
+                        <CompetenciasProfesionales competenciasProfesionalesData={competenciasProfesionalesData} />
                     </div>
                 </div>
             </div>

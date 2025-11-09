@@ -22,8 +22,7 @@ function ProyectosPersonales({ proyectos = {} }) {
 
             </div>
 
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer"
-                className="flex-grow-1 card bg-secondary-subtle border-0 shadow-lg mb-4 text-decoration-none" >
+            <div target="_blank" rel="noopener noreferrer" className="flex-grow-1 card bg-secondary-subtle border-0 shadow-lg mb-4 text-decoration-none" >
 
                 <div className="card-body p-4 border border-dark rounded-3">
                     {/* IMAGEN DE PREVIEW DEL PROYECTO */}
@@ -50,13 +49,13 @@ function ProyectosPersonales({ proyectos = {} }) {
                             <span className="ms-1">Ver Código</span>
                         </a>
                     </div>
-                    
+
                     {/* Descripción */}
                     <p className="card-text text-light mt-3" style={{ fontSize: '0.9rem' }}>
                         {descripcion}
                     </p>
                 </div>
-            </a>
+            </div>
         </div>
     );
 }

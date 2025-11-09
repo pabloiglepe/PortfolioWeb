@@ -4,9 +4,12 @@ import './App.css'
 import TrayectoriaProfesional from './components/TrayectoriaProfesional'
 import Icons from './components/Icons'
 import SobreMi from './components/SobreMi'
+import ProyectosPersonales from './components/ProyectosPersonales'
+import Contacto from './components/Contacto'
 
-
-// Array con la visibilidad laboral
+// ARRAYS 
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Array experiencia laboral
 const experienciaData = [
   {
     id: 1,
@@ -37,6 +40,7 @@ const experienciaData = [
   },
 ]
 
+// Array proyectos personales
 const proyectosData = [
   {
     id: 1,
@@ -45,24 +49,113 @@ const proyectosData = [
     descripcion: "Sitio web personal desarrollado para mostrar mi experiencia laboral, proyectos y habilidades técnicas de manera interactiva y responsive.",
     imageUrl: "https://placehold.co/400x200/007bff/ffffff?text=Portfolio+Web",
     githubUrl: "#",
-    icono: "github",
-    color: "bg-success"
+    icono: "web",
+    color: "bg-info"
   },
 
 ]
 
+// Array competencias profesionales
+const competenciasProfesionalesData = [
+  {
+    id: 1,
+    nombre: "JavaScript",
+    color: "bg-warning",
+    texto: "text-dark"
+  },
+  {
+    id: 2,
+    nombre: "React",
+    color: "bg-success",
+    texto: "text-dark"
+  },
+  {
+    id: 3,
+    nombre: "Bootstrap 5",
+    color: "bg-info",
+    texto: "text-dark"
+  },
+  {
+    id: 4,
+    nombre: "PHP",
+    color: "bg-primary",
+    texto: "text-dark"
+  },
+  {
+    id: 5,
+    nombre: "Git & GitHub",
+    color: "bg-dark",
+    texto: "text-light"
+  },
+  {
+    id: 6,
+    nombre: "SQL",
+    color: "bg-danger",
+    texto: "text-light"
+  },
+  {
+    id: 7,
+    nombre: "CSS",
+    color: "bg-secondary",
+    texto: "text-light"
+  },
+  {
+    id: 8,
+    nombre: "HTML 5",
+    color: "bg-light",
+    texto: "text-dark"
+  }
+
+]
+
+// Array contactos
+const contactosData = [
+  {
+    id: 1,
+    nombre: "Email",
+    icono: "email",
+    href: "mailto:pablo.iglesias.peral@gmail.com",
+    color: "btn-outline-primary"
+  },
+  {
+    id: 2,
+    nombre: "LinkedIn",
+    icono: "linkedin",
+    href: "https://www.linkedin.com/in/tu_perfil",
+    color: "btn-outline-info"
+  },
+  {
+    id: 3,
+    nombre: "GitHub",
+    icono: "github",
+    href: "https://github.com/pabloiglepe",
+    color: "btn-outline-dark"
+  },
+]
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function App() {
   // 1. Estado para controlar la visibilidad de la experiencia
-  const [verVisibilidad, setVerVisibilidad] = React.useState(false);
+  const [verVisibilidad, setVerVisibilidad] = useState(false);
 
   // CREAR FUNCIONAMIENTO PARA CAMBIAR PROYECTOS  
-
+  const [verProyectos, setVerProyectos] = useState(false);
 
 
   // 2. Función para alternar el estado
   const cambiarEstadoVisibilidad = () => {
     setVerVisibilidad(!verVisibilidad);
+    if (!verVisibilidad && verProyectos) {
+      setShowProjects(false);
+    }
+  };
+
+  const cambiarProyectos = () => {
+    setVerProyectos(!verProyectos);
+    // Si se muestra/oculta los proyectos, ocultamos la experiencia
+    if (!verProyectos && verVisibilidad) {
+      setVerProyectos(false);
+    }
   };
 
   // Determina si solo se muestra el componente SobreMi, si es así, lo centramos.
@@ -90,7 +183,7 @@ function App() {
         {/* Contenedor principal centrado y responsivo */}
         <div className={claseContainer} style={{ flexGrow: estaCentrado ? 1 : 'unset', width: '80%' }}>
 
-          <SobreMi estaCentrado={estaCentrado} />
+          <SobreMi estaCentrado={estaCentrado} competenciasProfesionalesData={competenciasProfesionalesData} />
 
           <div className="d-flex justify-content-center gap-3 mt-4 mb-5 w-100">
 
@@ -100,12 +193,11 @@ function App() {
             </button>
 
             {/* BOTÓN PARA MOSTRAR/OCULTAR PROYECTOS PERSONALES */}
-            <button className="btn btn-outline-primary mt-3 d-flex align-items-center mx-auto mx-md-0">
-              {verVisibilidad ? 'Proyectos Personales' : 'Proyectos Personales'} {IconoFlecha(verVisibilidad)}
+            <button onClick={cambiarProyectos} className="btn btn-outline-info mt-3 d-flex align-items-center mx-auto mx-md-0">
+              {verProyectos ? 'Proyectos Personales' : 'Proyectos Personales'} {IconoFlecha(verProyectos)}
             </button>
 
           </div>
-
 
           {verVisibilidad && (
             <div className='fade-in'>
@@ -117,7 +209,7 @@ function App() {
                   </span>
                 </h1>
                 <p className="lead text-light text-secondary">
-                  Recorrido a través de mi ámbito laboral
+                  Recorrido a través del mundo laboral
                 </p>
 
 
@@ -127,12 +219,37 @@ function App() {
 
               {/* Recorrido array visibilidad */}
               <div className="d-flex flex-column align-items-start w-100 position-relative">
-                {experienciaData.map((exp, index) => (
-                  <TrayectoriaProfesional
-                    key={exp.id}
-                    experiencia={exp}
-                    isLast={index === experienciaData.length - 1}
-                  />
+                {experienciaData.map((exp) => (
+                  <TrayectoriaProfesional key={exp.id} experiencia={exp} />
+                ))}
+
+              </div>
+            </div>
+          )}
+
+          {verProyectos && (
+            <div className="fade-in">
+
+              {/* Título de la Sección de Proyectos */}
+              <div id="proyectos" className="text-center mb-5 mt-5">
+                <h1 className="display-4 fw-bold mb-2">
+                  <span className="text-info">
+                    Proyectos Personales
+                  </span>
+                </h1>
+                <p className="lead text-light text-secondary">
+                  Iniciativas y desarrollos propios
+                </p>
+
+                {/* Línea de decoración */}
+                <hr className="w-25 mx-auto border-info" style={{ height: '3px', opacity: 1 }} />
+              </div>
+
+              {/* Timeline Layout */}
+              <div className="d-flex flex-column align-items-start w-100 position-relative">
+
+                {proyectosData.map((proyecto) => (
+                  <ProyectosPersonales key={proyecto.id} proyectos={proyecto} />
                 ))}
 
               </div>
@@ -141,20 +258,8 @@ function App() {
 
         </div>
 
-        {/* BOTÓN DE DESCARGA DE CV (siempre visible) */}
-        <div>
-          <p className="lead text-light text-secondary">
-            CV en formato PDF
-          </p>
-          <div className="d-flex justify-content-center mt-4 w-100">
-            <a href='/CV_Pablo_Iglesias_Peral_06_10_25.pdf' download="CV_Pablo_Iglesias_Peral_06_10_25.pdf"
-              className="p-2 rounded-circle bg-secondary text-white shadow-lg"
-              style={{ width: '40px', height: '40px' }}>
+        <Contacto contactosData={contactosData} />
 
-              <Icons name="download" style={{ width: '18px', height: '18px' }} />
-            </a>
-          </div>
-        </div>
       </div >
     </>
   )
