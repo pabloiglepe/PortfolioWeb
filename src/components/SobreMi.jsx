@@ -10,6 +10,8 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
 
     const claseCentrada = `card bg-dark text-white shadow-lg border-primary rounded-3 ${estaCentrado ? 'mb-0' : 'mb-5'}`;
 
+    const cvUrl = import.meta.env.BASE_URL + 'CV_Pablo.pdf';
+
     return (
 
         <div className={claseCentrada}>
@@ -30,7 +32,7 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                             CV en formato PDF:
                         </p>
                         <div className="d-flex justify-content-center mt-2 w-100">
-                            <a href='/CV_Pablo_Iglesias_Peral_06_10_25.pdf' download="CV_Pablo_Iglesias_Peral_06_10_25.pdf"
+                            <a href={cvUrl} download="CV_Pablo.pdf" target='_blank' rel="noopener noreferrer"
                                 className="p-2 rounded-circle bg-secondary text-white shadow-lg"
                                 style={{ width: '40px', height: '40px' }}>
 
