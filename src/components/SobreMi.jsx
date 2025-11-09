@@ -10,7 +10,6 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
 
     const claseCentrada = `card bg-dark text-white shadow-lg border-primary rounded-3 ${estaCentrado ? 'mb-0' : 'mb-5'}`;
 
-    const cvUrl = import.meta.env.BASE_URL + 'CV_Pablo.pdf';
 
     return (
 
@@ -22,7 +21,7 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                     <div className="col-12 col-md-4 text-center mb-4 mb-md-0">
                         <div style={{ width: '150px', height: '150px', margin: '0 auto', border: '4px solid #007bff', borderRadius: '50%', overflow: 'hidden' }}>
                             <img src={imagen} alt="Foto de perfil" className="img-fluid"
-                                onError={(e) => { e.target.onerror = null; e.target.src = "/public/sobremierror.svg" }}
+                                onError={(e) => { e.target.onerror = null; e.target.src = "/sobremierror.svg" }}
                                 style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                         </div>
 
@@ -32,7 +31,7 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                             CV en formato PDF:
                         </p>
                         <div className="d-flex justify-content-center mt-2 w-100">
-                            <a href={cvUrl} download="CV_Pablo.pdf" target='_blank' rel="noopener noreferrer"
+                            <a href='/CV_Pablo.pdf' download="CV_Pablo.pdf" target='_blank' rel="noopener noreferrer"
                                 className="p-2 rounded-circle bg-secondary text-white shadow-lg"
                                 style={{ width: '40px', height: '40px' }}>
 
