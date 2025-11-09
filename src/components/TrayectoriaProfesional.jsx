@@ -3,10 +3,8 @@ import { useState } from 'react'
 import Icons from './Icons';
 
 
-const ExperienciaProfesional = ({ experiencia = {}, isLast }) => {
+const TrayectoriaProfesional = ({ experiencia = {} }) => {
     const { puesto, empresa, duracion, descripcion, icono, color } = experiencia;
-
-    const lineaTiempo = `timeline-point ${isLast ? 'timeline-point-end' : ''}`;
 
     return (
         <div className="d-flex position-relative mb-5 w-100">
@@ -17,10 +15,7 @@ const ExperienciaProfesional = ({ experiencia = {}, isLast }) => {
                 <div className={`p-2 rounded-circle shadow-lg text-white z-1 ${color} border border-2 border-secondary`}>
                     <Icons name={icono} />
                 </div>
-                {/* Línea Vertical (solo si no es el último elemento) */}
-                {/* {!isLast && (
-                    <div className="timeline-line bg-secondary"></div>
-                )} */}
+
             </div>
 
             <div className="flex-grow-1 card bg-secondary-subtle border-0 shadow-lg mb-4" style={{ backgroundColor: '#212529 !important', borderColor: '#495057 !important' }}>
@@ -46,4 +41,4 @@ const ExperienciaProfesional = ({ experiencia = {}, isLast }) => {
     );
 }
 
-export default ExperienciaProfesional;
+export default TrayectoriaProfesional;
