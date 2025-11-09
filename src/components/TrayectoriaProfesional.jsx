@@ -15,19 +15,6 @@ const TrayectoriaProfesional = ({ experiencia = {} }) => {
                 <div className={`p-2 rounded-circle shadow-lg text-white z-1 ${color} border border-2 border-secondary`}>
                     <Icons name={icono} />
                 </div>
-<<<<<<< HEAD:src/components/TrayectoriaProfesional.jsx
-
-||||||| 5b94bbe:src/components/ExperienciaProfesional.jsx
-                {/* Línea Vertical (solo si no es el último elemento) */}
-                {!isLast && (
-                    <div className="timeline-line bg-secondary"></div>
-                )}
-=======
-                {/* Línea Vertical (solo si no es el último elemento) */}
-                {/* {!isLast && (
-                    <div className="timeline-line bg-secondary"></div>
-                )} */}
->>>>>>> 00229915362123ec7aca9045b58af1e8c0fdd70e:src/components/ExperienciaProfesional.jsx
             </div>
 
             <div className="flex-grow-1 card bg-secondary-subtle border-0 shadow-lg mb-4" style={{ backgroundColor: '#212529 !important', borderColor: '#495057 !important' }}>
