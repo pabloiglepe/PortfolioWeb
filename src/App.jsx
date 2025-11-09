@@ -14,27 +14,27 @@ const experienciaData = [
   {
     id: 1,
     puesto: "Cocinero y Cajero",
-    empresa: "Popeyes",
+    empresa: "Popeyes Louisiana Kitchen",
     duracion: "20/06/2025 - Actualidad",
-    descripcion: "sfkjhbvdfhilbghik",
-    icono: "popeye",
+    descripcion: "Miembro de equipo versátil y eficiente con experiencia dual en cocina y atención al cliente. Responsable de la preparación y cocción precisa de productos icónicos de Popeyes y de gestionar transacciones rápidas y amables en caja, asegurando la calidad del producto y la satisfacción del cliente",
+    icono: "popeyes",
     color: "bg-warning"
   },
   {
     id: 2,
     puesto: "Becario en Formación",
-    empresa: "Konecta",
+    empresa: "Konecta BTO SL",
     duracion: "02/12/2025 - Actualidad",
-    descripcion: "sfkjhbvdfhilbghik",
+    descripcion: "Desarrollador Full-stack en prácticas con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos",
     icono: "konecta",
     color: "bg-primary"
   },
   {
     id: 3,
     puesto: "Becario en Formación",
-    empresa: "Konecta",
+    empresa: "Konecta BTO SL",
     duracion: "19/03/2025 - 30/05/2025",
-    descripcion: "sfkjhbvdfhilbghik",
+    descripcion: "Desarrollador Full-stack en prácticas con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos",
     icono: "konecta",
     color: "bg-primary"
   },
@@ -51,6 +51,16 @@ const proyectosData = [
     githubUrl: "#",
     icono: "web",
     color: "bg-info"
+  },
+  {
+    id: 2,
+    nombre: "Plantilla Web",
+    tecnologias: "HTML, Bootstrap, JavaScript, PHP",
+    descripcion: "Plantilla web de propósito general desarrollada con una estructura modular y escalable. Está diseñada para ser la base de cualquier tipo de sitio web, ofreciendo una presentación limpia, adaptable y fácil de personalizar.",
+    imageUrl: "https://placehold.co/400x200/007bff/ffffff?text=Portfolio+Web",
+    githubUrl: "#",
+    icono: "plantilla",
+    color: "bg-secondary"
   },
 
 ]
@@ -108,6 +118,23 @@ const competenciasProfesionalesData = [
 
 ]
 
+const competenciasIdiomasData = [
+  {
+    id: 1,
+    nombre: "Español",
+    nivel: "Nativo",
+    color: "bg-danger",
+    texto: "text-ligth"
+  },
+  {
+    id: 2,
+    nombre: "Inglés",
+    nivel: "B2 - Titulación Cambridge English: First (CFE)",
+    color: "bg-success",
+    texto: "text-dark"
+  },
+]
+
 // Array contactos
 const contactosData = [
   {
@@ -129,10 +156,13 @@ const contactosData = [
     nombre: "GitHub",
     icono: "github",
     href: "https://github.com/pabloiglepe",
-    color: "btn-outline-dark"
+    color: "btn-outline-secondary"
   },
 ]
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 function App() {
   // 1. Estado para controlar la visibilidad de la experiencia
@@ -183,7 +213,7 @@ function App() {
         {/* Contenedor principal centrado y responsivo */}
         <div className={claseContainer} style={{ flexGrow: estaCentrado ? 1 : 'unset', width: '80%' }}>
 
-          <SobreMi estaCentrado={estaCentrado} competenciasProfesionalesData={competenciasProfesionalesData} />
+          <SobreMi estaCentrado={estaCentrado} competenciasProfesionalesData={competenciasProfesionalesData} competenciasIdiomasData={competenciasIdiomasData} />
 
           <div className="d-flex justify-content-center gap-3 mt-4 mb-5 w-100">
 

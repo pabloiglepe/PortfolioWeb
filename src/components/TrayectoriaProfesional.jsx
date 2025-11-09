@@ -9,7 +9,7 @@ const TrayectoriaProfesional = ({ experiencia = {} }) => {
     return (
         <div className="d-flex position-relative mb-5 w-100">
 
-            {/* Icono y Línea de Conexión */}
+            {/* Icono */}
             <div className="d-flex flex-column align-items-center me-3 me-md-4">
                 {/* Icono Redondo */}
                 <div className={`p-2 rounded-circle shadow-lg text-white z-1 ${color} border border-2 border-secondary`}>
@@ -31,7 +31,7 @@ const TrayectoriaProfesional = ({ experiencia = {} }) => {
                     </div>
 
                     {/* Descripción */}
-                    <p className="card-text text-light mt-3 fs-3">
+                    <p className="card-text text-light mt-3 fs-6">
                         {descripcion}
                     </p>
                 </div>

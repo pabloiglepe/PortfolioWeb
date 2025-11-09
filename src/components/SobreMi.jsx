@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import Icons from './Icons';
 import CompetenciasProfesionales from './CompetenciasProfesionales';
+import CompetenciasIdiomas from './CompetenciasIdiomas';
 
-function SobreMi({ estaCentrado, competenciasProfesionalesData = {} }) {
+function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competenciasIdiomasData = {} }) {
 
     const imagen = '/sobremi.svg';
 
@@ -25,10 +26,10 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {} }) {
 
                         {/* BOTÓN DE DESCARGA DE CV (siempre visible) */}
 
-                        <p className="small text-light mt-4 mb-1">
-                            Descarga mi CV en formato PDF:
+                        <p className="small text-light mt-5 mb-1">
+                            CV en formato PDF:
                         </p>
-                        <div className="d-flex justify-content-center mt-4 w-100">
+                        <div className="d-flex justify-content-center mt-2 w-100">
                             <a href='/CV_Pablo_Iglesias_Peral_06_10_25.pdf' download="CV_Pablo_Iglesias_Peral_06_10_25.pdf"
                                 className="p-2 rounded-circle bg-secondary text-white shadow-lg"
                                 style={{ width: '40px', height: '40px' }}>
@@ -45,13 +46,11 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {} }) {
                             Hola, soy <span className="text-primary">Pablo Iglesias Peral</span>
                         </h2>
                         <p className="lead text-secondary">
-                            Desarrollador Full Stack apasionado por construir soluciones web escalables y eficientes.
-                            Tengo 8 años de experiencia trabajando con tecnologías modernas como React, Node.js y sistemas
-                            de microservicios basados en la nube. Mi enfoque es siempre la usabilidad,
-                            el rendimiento y la entrega de valor.
+                            Futuro Técnico Superior en DAW, motivado y organizado. Con experiencia en proyectos tanto académicos como profesionales utilizando tecnologías Full-Stack. Destaco por mi compromiso, mi habilidad para el trabajo en equipo y la resolución de problemas.
                         </p>
 
                         <CompetenciasProfesionales competenciasProfesionalesData={competenciasProfesionalesData} />
+                        <CompetenciasIdiomas competenciasIdiomasData={competenciasIdiomasData} />
                     </div>
                 </div>
             </div>
