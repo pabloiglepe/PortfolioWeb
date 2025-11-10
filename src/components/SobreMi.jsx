@@ -9,7 +9,7 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
     const imagen = '/sobremi.svg';
     const imagenError = '/sobremierror.svg';
 
-    const claseCentrada = `card bg-dark text-white shadow-lg border-primary rounded-3 ${estaCentrado ? 'mb-0' : 'mb-5'}`;
+    const claseCentrada = `card bg-dark text-white shadow-lg border-purple rounded-3 ${estaCentrado ? 'mb-0' : 'mb-5'}`;
 
 
     return (
@@ -44,7 +44,7 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                     {/* Columna de Texto */}
                     <div className="col-12 col-md-8">
                         <h2 className="display-6 fw-bolder text-light mb-2">
-                            Hola, soy <span className="text-primary">Pablo Iglesias Peral</span>
+                            Hola, soy <span className="text-purple">Pablo Iglesias Peral</span>
                         </h2>
                         <p className="lead text-secondary">
                             Futuro Técnico Superior en DAW. Con experiencia en proyectos tanto académicos como profesionales utilizando tecnologías Full-Stack. Destaco por mi compromiso, mi habilidad para el trabajo en equipo y la resolución de problemas.

@@ -27,7 +27,7 @@ const experienciaData = [
     duracion: "02/12/2025 - Actualidad",
     descripcion: "Desarrollador Full-stack en prácticas con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos",
     icono: "konecta",
-    color: "bg-primary"
+    color: "bg-purple"
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const experienciaData = [
     duracion: "19/03/2025 - 30/05/2025",
     descripcion: "Desarrollador Full-stack en prácticas con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos",
     icono: "konecta",
-    color: "bg-primary"
+    color: "bg-purple"
   },
 ]
 
@@ -62,7 +62,6 @@ const proyectosData = [
     icono: "web",
     color: "bg-info"
   }
-
 ]
 
 // Array competencias profesionales
@@ -218,7 +217,7 @@ function App() {
           <div className="d-flex justify-content-center gap-3 mt-4 mb-5 w-100">
 
             {/* BOTÓN PARA MOSTRAR/OCULTAR TRAYECTORIA PROFESIONAL */}
-            <button onClick={cambiarEstadoVisibilidad} className="btn btn-outline-primary mt-3 d-flex align-items-center mx-auto mx-md-0">
+            <button onClick={cambiarEstadoVisibilidad} className="btn btn-outline-purple mt-3 d-flex align-items-center mx-auto mx-md-0">
               {verVisibilidad ? 'Trayectoria Profesional' : 'Trayectoria Profesional'} {IconoFlecha(verVisibilidad)}
             </button>
 
@@ -234,7 +233,7 @@ function App() {
               {/* Título de la Sección */}
               <div id='visibilidad' className="text-center mb-5">
                 <h1 className="display-4 fw-bold mb-2">
-                  <span className="text-primary">
+                  <span className="text-purple">
                     Trayectoria Profesional
                   </span>
                 </h1>
@@ -244,7 +243,7 @@ function App() {
 
 
                 {/* Línea de decoración */}
-                <hr className="w-25 mx-auto border-primary" style={{ height: '3px', opacity: 1 }} />
+                <hr className="w-25 mx-auto border-purple" style={{ height: '3px', opacity: 1 }} />
               </div>
 
               {/* Recorrido array visibilidad */}
@@ -261,7 +260,7 @@ function App() {
             <div className="fade-in">
 
               {/* Título de la Sección de Proyectos */}
-              <div id="proyectos" className="text-center mb-5 mt-5">
+              <div id="proyectos" className="text-center mb-5">
                 <h1 className="display-4 fw-bold mb-2">
                   <span className="text-info">
                     Proyectos Personales

@@ -3,7 +3,70 @@
    margin: 0 auto;
    padding: 2rem;
    text-align: center;
+   --bs-purple: #7033fd;
  }
+
+ .bg-purple {
+   background-color: var(--bs-purple) !important;
+ }
+
+ .text-purple {
+   color: var(--bs-purple) !important;
+ }
+
+ .border-purple {
+   border-color: var(--bs-purple) !important;
+ }
+
+ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+ .btn-outline-purple {
+   display: inline-block;
+   font-weight: 400;
+   line-height: 1.5;
+   text-align: center;
+   text-decoration: none;
+   vertical-align: middle;
+   cursor: pointer;
+   user-select: none;
+   border: 1px solid var(--bs-purple) !important;
+   padding: 0.375rem 0.75rem;
+   font-size: 1rem;
+   border-radius: 0.25rem;
+   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+   color: var(--bs-purple) !important;   
+   background-color: transparent;
+   background-image: none;
+ }
+
+ .btn.btn-outline-purple:hover {
+   color: #fff !important;
+   background-color: var(--bs-purple) !important;
+   border-color: var(--bs-purple) !important;
+   box-shadow: none;
+ }
+
+ .btn.btn-outline-purple:focus {
+   /* Al hacer clic y soltar, vuelve al estilo outline transparente */
+   color: #fff;
+   background-color: transparent;
+   border-color: var(--bs-purple) !important;
+ }
+
+ .btn.btn-outline-purple:active {
+   color: #fff !important;
+   background-color: transparent;
+   border-color: var(--bs-purple) !important;
+   box-shadow: none;
+ }
+
+ .btn-outline-purple:disabled {
+   color: #fff !important;
+   background-color: transparent;
+   border-color: var(--bs-purple) !important;
+   opacity: 0.65;
+ }
+ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
 
 
  body {
@@ -20,7 +83,7 @@
  }
 
  .card-body:hover {
-   box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+   box-shadow: 0 0 15px #7033fd;
  }
 
 

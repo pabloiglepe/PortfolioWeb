@@ -21,7 +21,7 @@ const TrayectoriaProfesional = ({ experiencia = {} }) => {
                 <div className="card-body p-4 border border-dark rounded-3">
                     {/* Puesto Y Empresa */}
                     <div>
-                        <h3 className='card-title fw-bold text-primary mb-0'>{puesto}</h3>
+                        <h3 className='card-title fw-bold text-purple mb-0'>{puesto}</h3>
                         <p className="card-subtitle text-light small mt-1">{empresa}</p>
                     </div>
 
