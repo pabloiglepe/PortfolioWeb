@@ -7,12 +7,12 @@ import CompetenciasIdiomas from './CompetenciasIdiomas';
 function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competenciasIdiomasData = {} }) {
 
     const imagen = '/sobremi.svg';
+    const imagenError = '/sobremierror.svg';
 
     const claseCentrada = `card bg-dark text-white shadow-lg border-primary rounded-3 ${estaCentrado ? 'mb-0' : 'mb-5'}`;
 
 
     return (
-
         <div className={claseCentrada}>
             <div className="card-body p-5">
                 <div className="row align-items-center">
@@ -21,7 +21,7 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                     <div className="col-12 col-md-4 text-center mb-4 mb-md-0">
                         <div style={{ width: '150px', height: '150px', margin: '0 auto', border: '4px solid #007bff', borderRadius: '50%', overflow: 'hidden' }}>
                             <img src={imagen} alt="Foto de perfil" className="img-fluid"
-                                onError={(e) => { e.target.onerror = null; e.target.src = "/sobremierror.svg" }}
+                                onError={(e) => { e.target.onerror = null; e.target.src = {imagenError}}}
                                 style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                         </div>
 
@@ -47,7 +47,7 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                             Hola, soy <span className="text-primary">Pablo Iglesias Peral</span>
                         </h2>
                         <p className="lead text-secondary">
-                            Futuro Técnico Superior en DAW, motivado y organizado. Con experiencia en proyectos tanto académicos como profesionales utilizando tecnologías Full-Stack. Destaco por mi compromiso, mi habilidad para el trabajo en equipo y la resolución de problemas.
+                            Futuro Técnico Superior en DAW. Con experiencia en proyectos tanto académicos como profesionales utilizando tecnologías Full-Stack. Destaco por mi compromiso, mi habilidad para el trabajo en equipo y la resolución de problemas.
                         </p>
 
                         <CompetenciasProfesionales competenciasProfesionalesData={competenciasProfesionalesData} />
