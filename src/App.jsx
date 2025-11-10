@@ -44,24 +44,24 @@ const experienciaData = [
 const proyectosData = [
   {
     id: 1,
-    nombre: "Portfolio Web",
-    tecnologias: "React, Bootstrap, JavaScript",
-    descripcion: "Sitio web personal desarrollado para mostrar mi experiencia laboral, proyectos y habilidades técnicas de manera interactiva y responsive.",
-    imageUrl: "/plantilla_web.png",
-    githubUrl: "https://github.com/pabloiglepe/PortfolioWeb",
-    icono: "web",
-    color: "bg-info"
-  },
-  {
-    id: 2,
     nombre: "Plantilla Web",
     tecnologias: "HTML, Bootstrap, JavaScript, PHP",
     descripcion: "Plantilla web de propósito general desarrollada con una estructura modular y escalable. Está diseñada para ser la base de cualquier tipo de sitio web, ofreciendo una presentación limpia, adaptable y fácil de personalizar.",
-    imageUrl: "https://placehold.co/400x200/007bff/ffffff?text=Portfolio+Web",
+    imageUrl: "/plantilla_web.png",
     githubUrl: "https://github.com/pabloiglepe/Proyecto_Plantilla_Web",
     icono: "plantilla",
     color: "bg-secondary"
   },
+  {
+    id: 2,
+    nombre: "Portfolio Web",
+    tecnologias: "React, Bootstrap, JavaScript",
+    descripcion: "Sitio web personal desarrollado para mostrar mi experiencia laboral, proyectos y habilidades técnicas de manera interactiva y responsive.",
+    imageUrl: "https://placehold.co/400x200/007bff/ffffff?text=Portfolio+Web",
+    githubUrl: "https://github.com/pabloiglepe/PortfolioWeb",
+    icono: "web",
+    color: "bg-info"
+  }
 
 ]
 
