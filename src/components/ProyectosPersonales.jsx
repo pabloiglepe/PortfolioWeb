@@ -22,9 +22,9 @@ function ProyectosPersonales({ proyectos = {} }) {
 
             </div>
 
-            <div target="_blank" rel="noopener noreferrer" className=" text-start flex-grow-1 card bg-secondary-subtle border-0 shadow-lg mb-4 text-decoration-none" >
+            <div className=" text-start flex-grow-1 card bg-secondary-subtle border-0 shadow-lg mb-4 text-decoration-none" >
 
-                <div className="card-body p-4 border border-dark rounded-3">
+                <div className="card-body-azul p-4 border border-dark rounded-3">
                     {/* IMAGEN DE PREVIEW DEL PROYECTO */}
                     {imageUrl && (
                         <div className="mb-3 text-center">
@@ -36,7 +36,7 @@ function ProyectosPersonales({ proyectos = {} }) {
                     <div className="d-flex justify-content-between align-items-start flex-wrap mb-2">
                         {/* TÍTULO Y TECNOLOGÍAS */}
                         <div>
-                            <h5 className="card-title fw-bold text-primary mb-0 ">{nombre}</h5>
+                            <h5 className="card-title fw-bold text-azul mb-0 ">{nombre}</h5>
                             <p className="card-subtitle text-light small mt-1">Tecnologías: {tecnologias}</p>
                         </div>
 

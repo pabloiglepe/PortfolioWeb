@@ -141,14 +141,14 @@ const contactosData = [
     nombre: "Email",
     icono: "email",
     href: "mailto:pablo.iglesias.peral@gmail.com",
-    color: "btn-outline-primary"
+    color: "btn-outline-purple"
   },
   {
     id: 2,
     nombre: "LinkedIn",
     icono: "linkedin",
     href: "https://www.linkedin.com/in/tu_perfil",
-    color: "btn-outline-info"
+    color: "btn-outline-azul"
   },
   {
     id: 3,
@@ -222,7 +222,7 @@ function App() {
             </button>
 
             {/* BOTÓN PARA MOSTRAR/OCULTAR PROYECTOS PERSONALES */}
-            <button onClick={cambiarProyectos} className="btn btn-outline-info mt-3 d-flex align-items-center mx-auto mx-md-0">
+            <button onClick={cambiarProyectos} className="btn btn-outline-azul mt-3 d-flex align-items-center mx-auto mx-md-0">
               {verProyectos ? 'Proyectos Personales' : 'Proyectos Personales'} {IconoFlecha(verProyectos)}
             </button>
 
@@ -262,7 +262,7 @@ function App() {
               {/* Título de la Sección de Proyectos */}
               <div id="proyectos" className="text-center mb-5">
                 <h1 className="display-4 fw-bold mb-2">
-                  <span className="text-info">
+                  <span className="text-azul">
                     Proyectos Personales
                   </span>
                 </h1>
@@ -271,7 +271,7 @@ function App() {
                 </p>
 
                 {/* Línea de decoración */}
-                <hr className="w-25 mx-auto border-info" style={{ height: '3px', opacity: 1 }} />
+                <hr className="w-25 mx-auto border-azul" style={{ height: '3px', opacity: 1 }} />
               </div>
 
               {/* Timeline Layout */}
