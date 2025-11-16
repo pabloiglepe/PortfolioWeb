@@ -57,10 +57,10 @@ const proyectosData = [
     nombre: "Portfolio Web",
     tecnologias: "React, Bootstrap, JavaScript",
     descripcion: "Sitio web personal desarrollado para mostrar mi experiencia laboral, proyectos y habilidades técnicas de manera interactiva y responsive.",
-    imageUrl: "https://placehold.co/400x200/007bff/ffffff?text=Portfolio+Web",
+    imageUrl: "/portfolio_web.png",
     githubUrl: "https://github.com/pabloiglepe/PortfolioWeb",
     icono: "web",
-    color: "bg-info"
+    color: "bg-azul"
   }
 ]
 
@@ -68,52 +68,40 @@ const proyectosData = [
 const competenciasProfesionalesData = [
   {
     id: 1,
-    nombre: "JavaScript",
-    color: "bg-warning",
-    texto: "text-dark"
+    icono: "java",
   },
   {
     id: 2,
-    nombre: "React",
-    color: "bg-success",
-    texto: "text-dark"
+    icono: "php",
   },
   {
     id: 3,
-    nombre: "Bootstrap 5",
-    color: "bg-info",
-    texto: "text-dark"
+    icono: "javascript",
   },
   {
     id: 4,
-    nombre: "PHP",
-    color: "bg-primary",
-    texto: "text-dark"
+    icono: "react",
   },
   {
     id: 5,
-    nombre: "Git & GitHub",
-    color: "bg-dark",
-    texto: "text-light"
+    icono: "sql",
   },
   {
     id: 6,
-    nombre: "SQL",
-    color: "bg-danger",
-    texto: "text-light"
+    icono: "github",
   },
   {
     id: 7,
-    nombre: "CSS",
-    color: "bg-secondary",
-    texto: "text-light"
+    icono: "html",
   },
   {
     id: 8,
-    nombre: "HTML 5",
-    color: "bg-light",
-    texto: "text-dark"
-  }
+    icono: "css",
+  },
+  {
+    id: 9,
+    icono: "bootstrap",
+  },
 
 ]
 
@@ -123,14 +111,16 @@ const competenciasIdiomasData = [
     nombre: "Español",
     nivel: "Nativo",
     color: "bg-danger",
-    texto: "text-ligth"
+    texto: "text-ligth",
+    icono: "spain"
   },
   {
     id: 2,
     nombre: "Inglés",
     nivel: "B2 - Titulación Cambridge English: First (CFE)",
     color: "bg-success",
-    texto: "text-dark"
+    texto: "text-dark",
+    icono: "britain"
   },
 ]
 

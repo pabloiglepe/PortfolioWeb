@@ -8,7 +8,7 @@ function ProyectosPersonales({ proyectos = {} }) {
     // Manejador de error en la imagen
     const manejadorErrorImagen = (e) => {
         e.target.onerror = null;
-        e.target.src = "https://placehold.co/400x200/6c757d/ffffff?text=Imagen+No+Disp"; // Placeholder gris
+        e.target.src = "https://placehold.co/400x200/6c757d/ffffff?text=Imagen+No+Disp";
     };
 
     return (
