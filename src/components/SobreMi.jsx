@@ -6,7 +6,7 @@ import CompetenciasIdiomas from './CompetenciasIdiomas';
 import { T } from '../i18n.js';
 
 
-function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competenciasIdiomasData = {}, lang }) {
+function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competenciasIdiomasData = {}, lang, cambiarIdiomas }) {
 
     const imagen = '/sobremi.svg';
     const imagenError = '/sobremierror.svg';
@@ -52,8 +52,8 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                             {T('role_tag', lang)}
                         </p>
 
-                        <CompetenciasProfesionales competenciasProfesionalesData={competenciasProfesionalesData} />
-                        <CompetenciasIdiomas competenciasIdiomasData={competenciasIdiomasData} />
+                        <CompetenciasProfesionales competenciasProfesionalesData={competenciasProfesionalesData} lang={lang} />
+                        <CompetenciasIdiomas competenciasIdiomasData={competenciasIdiomasData} lang={lang} cambiarIdiomas={cambiarIdiomas} />
                     </div>
                 </div>
             </div>

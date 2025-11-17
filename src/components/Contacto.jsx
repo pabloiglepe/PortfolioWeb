@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import Icons from './Icons';
+import {T} from '../i18n';
 
-function Contacto({ contactosData = {} }) {
+function Contacto({ contactosData = {}, lang }) {
 
     return (
         <div className="text-center mb-5">
-            <h2 className="fw-bold mb-4 text-light">Contacto</h2>
+            <h2 className="fw-bold mb-4 text-light">{T('contact_title', lang)}</h2>
             <div className="d-flex justify-content-center gap-4">
                 {contactosData.map((contacto) => (
                     <a key={contacto.id} href={contacto.href} target="_blank" rel="noopener noreferrer"
