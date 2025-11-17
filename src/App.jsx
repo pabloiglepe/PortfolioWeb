@@ -16,7 +16,7 @@ const experienciaData = [
     id: 1,
     puesto: { es: "Cocinero y Cajero", en: "Cook and Cashier" },
     empresa: "Popeyes Louisiana Kitchen",
-    duracion: "20/06/2025 - Actualidad",
+    duracion: { es: "20/06/2025 - Actualidad", en: "20/06/2025 - Present" },
     descripcion: { es: "Responsable de la preparación de alimentos, garantizando los estándares de calidad, y gestión de transacciones en caja.", en: "Responsible for food preparation, guaranteeing quality standards, and managing cash transactions.", en: "Responsible for food preparation, ensuring quality standards, and managing cash register transactions." },
     icono: "popeyes",
     color: "bg-warning"
@@ -25,7 +25,7 @@ const experienciaData = [
     id: 2,
     puesto: { es: "Becario en Formación", en: "Trainee Intern" },
     empresa: "Konecta BTO SL",
-    duracion: "02/12/2025 - Actualidad",
+    duracion: { es: "02/12/2025 - Actualidad", en: "02/12/2025 - Present" },
     descripcion: {
       es: "Desarrollador Full-stack en prácticas, con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos", en: "Full-stack developer intern with a knowledge base covering both front-end and back-end development. I actively collaborate in the entire development lifecycle, from responsive interface design to server-side logic and database implementation."
     },

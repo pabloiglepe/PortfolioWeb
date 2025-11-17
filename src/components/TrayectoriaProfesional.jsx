@@ -27,7 +27,7 @@ const TrayectoriaProfesional = ({ experiencia = {}, lang }) => {
 
                     {/* Duración */}
                     <div className="badge bg-dark text-light fw-semibold p-2 mt-1 mt-md-0">
-                        {duracion}
+                        {duracion[lang]}
                     </div>
 
                     {/* Descripción */}
