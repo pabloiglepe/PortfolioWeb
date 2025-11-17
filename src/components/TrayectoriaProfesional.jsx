@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Icons from './Icons';
 
 
-const TrayectoriaProfesional = ({ experiencia = {} }) => {
+const TrayectoriaProfesional = ({ experiencia = {}, lang }) => {
     const { puesto, empresa, duracion, descripcion, icono, color } = experiencia;
 
     return (
@@ -21,7 +21,7 @@ const TrayectoriaProfesional = ({ experiencia = {} }) => {
                 <div className="card-body p-4 border border-dark rounded-3">
                     {/* Puesto Y Empresa */}
                     <div>
-                        <h3 className='card-title fw-bold text-purple mb-0'>{puesto}</h3>
+                        <h3 className='card-title fw-bold text-purple mb-0'>{puesto[lang]}</h3>
                         <p className="card-subtitle text-light small mt-1">{empresa}</p>
                     </div>
 
@@ -32,7 +32,7 @@ const TrayectoriaProfesional = ({ experiencia = {} }) => {
 
                     {/* Descripción */}
                     <p className="card-text text-light mt-3 fs-6">
-                        {descripcion}
+                        {descripcion[lang]}
                     </p>
                 </div>
             </div>

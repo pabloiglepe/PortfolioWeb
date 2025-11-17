@@ -6,6 +6,7 @@ import Icons from './components/Icons'
 import SobreMi from './components/SobreMi'
 import ProyectosPersonales from './components/ProyectosPersonales'
 import Contacto from './components/Contacto'
+import { T } from './i18n.js';
 
 // ARRAYS 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -13,28 +14,28 @@ import Contacto from './components/Contacto'
 const experienciaData = [
   {
     id: 1,
-    puesto: "Cocinero y Cajero",
+    puesto: { es: "Cocinero y Cajero", en: "Cook and Cashier" },
     empresa: "Popeyes Louisiana Kitchen",
     duracion: "20/06/2025 - Actualidad",
-    descripcion: "Miembro de equipo versátil y eficiente con experiencia dual en cocina y atención al cliente. Responsable de la preparación y cocción precisa de productos icónicos de Popeyes y de gestionar transacciones rápidas y amables en caja, asegurando la calidad del producto y la satisfacción del cliente",
+    descripcion: { es: "Responsable de la preparación de alimentos, garantizando los estándares de calidad, y gestión de transacciones en caja.", en: "Responsible for food preparation, guaranteeing quality standards, and managing cash transactions." },
     icono: "popeyes",
     color: "bg-warning"
   },
   {
     id: 2,
-    puesto: "Becario en Formación",
+    puesto: { es: "Becario en Formación", en: "Trainee Intern" },
     empresa: "Konecta BTO SL",
     duracion: "02/12/2025 - Actualidad",
-    descripcion: "Desarrollador Full-stack en prácticas con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos",
+    descripcion: { es: "Desarrollador Full-stack en prácticas con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos", en: "" },
     icono: "konecta",
     color: "bg-purple"
   },
   {
     id: 3,
-    puesto: "Becario en Formación",
+    puesto: { es: "Becario en Formación", en: "Trainee Intern" },
     empresa: "Konecta BTO SL",
     duracion: "19/03/2025 - 30/05/2025",
-    descripcion: "Desarrollador Full-stack en prácticas con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos",
+    descripcion: { es: "Desarrollador Full-stack en prácticas con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos", en: "" },
     icono: "konecta",
     color: "bg-purple"
   },
@@ -44,9 +45,9 @@ const experienciaData = [
 const proyectosData = [
   {
     id: 1,
-    nombre: "Plantilla Web",
+    nombre: { es: "Plantilla Web", en: "" },
     tecnologias: "HTML, Bootstrap, JavaScript, PHP",
-    descripcion: "Plantilla web de propósito general desarrollada con una estructura modular y escalable. Está diseñada para ser la base de cualquier tipo de sitio web, ofreciendo una presentación limpia, adaptable y fácil de personalizar.",
+    descripcion: { es: "Plantilla web de propósito general desarrollada con una estructura modular y escalable. Está diseñada para ser la base de cualquier tipo de sitio web, ofreciendo una presentación limpia, adaptable y fácil de personalizar.", en: "" },
     imageUrl: "/plantilla_web.png",
     githubUrl: "https://github.com/pabloiglepe/Proyecto_Plantilla_Web",
     icono: "plantilla",
@@ -56,7 +57,7 @@ const proyectosData = [
     id: 2,
     nombre: "Portfolio Web",
     tecnologias: "React, Bootstrap, JavaScript",
-    descripcion: "Sitio web personal desarrollado para mostrar mi experiencia laboral, proyectos y habilidades técnicas de manera interactiva y responsive.",
+    descripcion: { es: "Sitio web personal desarrollado para mostrar mi experiencia laboral, proyectos y habilidades técnicas de manera interactiva y responsive.", en: "" },
     imageUrl: "/portfolio_web.png",
     githubUrl: "https://github.com/pabloiglepe/PortfolioWeb",
     icono: "web",
@@ -108,18 +109,10 @@ const competenciasProfesionalesData = [
 const competenciasIdiomasData = [
   {
     id: 1,
-    nombre: "Español",
-    nivel: "Nativo",
-    color: "bg-danger",
-    texto: "text-ligth",
     icono: "spain"
   },
   {
     id: 2,
-    nombre: "Inglés",
-    nivel: "B2 - Titulación Cambridge English: First (CFE)",
-    color: "bg-success",
-    texto: "text-dark",
     icono: "britain"
   },
 ]
@@ -154,11 +147,14 @@ const contactosData = [
 
 
 function App() {
-  // 1. Estado para controlar la visibilidad de la experiencia
+  // CONTROLAR VISIBILIDAD
   const [verVisibilidad, setVerVisibilidad] = useState(false);
 
   // CREAR FUNCIONAMIENTO PARA CAMBIAR PROYECTOS  
   const [verProyectos, setVerProyectos] = useState(false);
+
+  // FUNCIONAMIENTO PARA CAMBIAR IDIOMAS
+  const [lang, setLang] = useState('es');
 
 
   // 2. Función para alternar el estado
@@ -176,6 +172,27 @@ function App() {
       setVerProyectos(false);
     }
   };
+
+  const cambiarIdiomas = () => {
+    setLang(idiomaActual => (idiomaActual === 'es' ? 'en' : 'es'));
+  }
+
+  const controlButtons = [
+    {
+      key: 'experience',
+      label: verVisibilidad ? 'hide_experience' : 'view_experience',
+      icon: verVisibilidad ? 'briefcase' : 'briefcase',
+      onClick: cambiarEstadoVisibilidad,
+      color: 'btn-primary'
+    },
+    {
+      key: 'projects',
+      label: verProyectos ? 'hide_projects' : 'view_projects',
+      icon: verProyectos ? 'rocket' : 'rocket',
+      onClick: cambiarProyectos,
+      color: 'btn-info'
+    },
+  ];
 
   // Determina si solo se muestra el componente SobreMi, si es así, lo centramos.
   const estaCentrado = !verVisibilidad;
@@ -202,19 +219,28 @@ function App() {
         {/* Contenedor principal centrado y responsivo */}
         <div className={claseContainer} style={{ flexGrow: estaCentrado ? 1 : 'unset', width: '80%' }}>
 
-          <SobreMi estaCentrado={estaCentrado} competenciasProfesionalesData={competenciasProfesionalesData} competenciasIdiomasData={competenciasIdiomasData} />
+          <SobreMi estaCentrado={estaCentrado} competenciasProfesionalesData={competenciasProfesionalesData} competenciasIdiomasData={competenciasIdiomasData}
+            lang={cambiarIdiomas} />
 
           <div className="d-flex justify-content-center gap-3 mt-4 mb-5 w-100">
 
             {/* BOTÓN PARA MOSTRAR/OCULTAR TRAYECTORIA PROFESIONAL */}
-            <button onClick={cambiarEstadoVisibilidad} className="btn btn-outline-purple mt-3 d-flex align-items-center mx-auto mx-md-0">
+            {controlButtons.map(boton => (
+              <button key={boton.key} className={`btn ${boton.color} shadow-lg fw-semibold d-flex align-items-center`} onClick={boton.onClick}>
+                <Icons name={boton.icon} className="me-2" style={{ width: '1.25rem', height: '1.25rem' }} />
+                {T(boton.label, lang)}
+              </button>
+            ))}
+
+
+            {/* <button onClick={cambiarEstadoVisibilidad} className="btn btn-outline-purple mt-3 d-flex align-items-center mx-auto mx-md-0">
               {verVisibilidad ? 'Trayectoria Profesional' : 'Trayectoria Profesional'} {IconoFlecha(verVisibilidad)}
-            </button>
+            </button> */}
 
             {/* BOTÓN PARA MOSTRAR/OCULTAR PROYECTOS PERSONALES */}
-            <button onClick={cambiarProyectos} className="btn btn-outline-azul mt-3 d-flex align-items-center mx-auto mx-md-0">
+            {/* <button onClick={cambiarProyectos} className="btn btn-outline-azul mt-3 d-flex align-items-center mx-auto mx-md-0">
               {verProyectos ? 'Proyectos Personales' : 'Proyectos Personales'} {IconoFlecha(verProyectos)}
-            </button>
+            </button> */}
 
           </div>
 
@@ -224,11 +250,11 @@ function App() {
               <div id='visibilidad' className="text-center mb-5">
                 <h1 className="display-4 fw-bold mb-2">
                   <span className="text-purple">
-                    Trayectoria Profesional
+                    {T("view_experience", lang)}
                   </span>
                 </h1>
                 <p className="lead text-light text-secondary">
-                  Recorrido a través del mundo laboral
+                  {T("experience_subtitle", lang)}
                 </p>
 
 
@@ -253,11 +279,11 @@ function App() {
               <div id="proyectos" className="text-center mb-5">
                 <h1 className="display-4 fw-bold mb-2">
                   <span className="text-azul">
-                    Proyectos Personales
+                    {T("projects_title", lang)}
                   </span>
                 </h1>
                 <p className="lead text-light text-secondary">
-                  Iniciativas y desarrollos propios
+                  {T("projects_subtitle", lang)}
                 </p>
 
                 {/* Línea de decoración */}
@@ -268,7 +294,7 @@ function App() {
               <div className="d-flex flex-column align-items-start w-100 position-relative">
 
                 {proyectosData.map((proyecto) => (
-                  <ProyectosPersonales key={proyecto.id} proyectos={proyecto} />
+                  <ProyectosPersonales key={proyecto.id} proyectos={proyecto} lang={lang} />
                 ))}
 
               </div>

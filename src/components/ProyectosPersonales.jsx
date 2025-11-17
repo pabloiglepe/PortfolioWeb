@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import Icons from './Icons';
+import { T } from '../i18n.js';
 
-function ProyectosPersonales({ proyectos = {} }) {
+
+function ProyectosPersonales({ proyectos = {}, lang }) {
     const { id, nombre, tecnologias, descripcion, icono, color, imageUrl, githubUrl } = proyectos;
 
     // Manejador de error en la imagen
@@ -36,8 +38,8 @@ function ProyectosPersonales({ proyectos = {} }) {
                     <div className="d-flex justify-content-between align-items-start flex-wrap mb-2">
                         {/* TÍTULO Y TECNOLOGÍAS */}
                         <div>
-                            <h5 className="card-title fw-bold text-azul mb-0 ">{nombre}</h5>
-                            <p className="card-subtitle text-light small mt-1">Tecnologías: {tecnologias}</p>
+                            <h5 className="card-title fw-bold text-azul mb-0 ">{nombre[lang]}</h5>
+                            <p className="card-subtitle text-light small mt-1">{T('tech_label', lang)} {tecnologias}</p>
                         </div>
 
                         {/* ICONO Y BOTÓN DE GITHUB */}
@@ -46,13 +48,13 @@ function ProyectosPersonales({ proyectos = {} }) {
                             onClick={(e) => e.stopPropagation()}>
 
                             <Icons name="github" style={{ width: '16px', height: '16px' }} />
-                            <span className="ms-1">Ver Código</span>
+                            <span className="ms-1">{T('view_code', lang)}</span>
                         </a>
                     </div>
 
                     {/* Descripción */}
                     <p className="card-text text-light mt-3" style={{ fontSize: '0.9rem' }}>
-                        {descripcion}
+                        {descripcion[lang]}
                     </p>
                 </div>
             </div>

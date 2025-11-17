@@ -3,8 +3,10 @@ import { useState } from 'react'
 import Icons from './Icons';
 import CompetenciasProfesionales from './CompetenciasProfesionales';
 import CompetenciasIdiomas from './CompetenciasIdiomas';
+import { T } from '../i18n.js';
 
-function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competenciasIdiomasData = {} }) {
+
+function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competenciasIdiomasData = {}, lang }) {
 
     const imagen = '/sobremi.svg';
     const imagenError = '/sobremierror.svg';
@@ -28,7 +30,7 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                         {/* BOTÓN DE DESCARGA DE CV (siempre visible) */}
 
                         <p className="small text-light mt-5 mb-1">
-                            CV en formato PDF:
+                            {T('download_cv_text', lang)}
                         </p>
                         <div className="d-flex justify-content-center mt-2 w-100">
                             <a href='/CV_Pablo.pdf' download="CV_Pablo.pdf" target='_blank' rel="noopener noreferrer"
@@ -44,10 +46,10 @@ function SobreMi({ estaCentrado, competenciasProfesionalesData = {}, competencia
                     {/* Columna de Texto */}
                     <div className="col-12 col-md-8">
                         <h2 className="display-6 fw-bolder text-light mb-2">
-                            Hola, soy <span className="text-purple">Pablo Iglesias Peral</span>
+                            {T('greeting', lang)} <span className="text-purple">Pablo Iglesias Peral</span>
                         </h2>
                         <p className="lead text-secondary">
-                            Futuro Técnico Superior en DAW. Con experiencia en proyectos tanto académicos como profesionales utilizando tecnologías Full-Stack. Destaco por mi compromiso, mi habilidad para el trabajo en equipo y la resolución de problemas.
+                            {T('role_tag', lang)}
                         </p>
 
                         <CompetenciasProfesionales competenciasProfesionalesData={competenciasProfesionalesData} />
