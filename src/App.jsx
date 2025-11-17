@@ -36,7 +36,7 @@ const experienciaData = [
     id: 3,
     puesto: { es: "Becario en Formación", en: "Trainee Intern" },
     empresa: "Konecta BTO SL",
-    duracion: "19/03/2025 - 30/05/2025",
+    duracion: { es: "02/12/2025 - Actualidad", en: "02/12/2025 - Present" },
     descripcion: {
       es: "Desarrollador Full-stack en prácticas, con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos", en: "Full-stack developer intern with a knowledge base covering both front-end and back-end development. I actively collaborate in the entire development lifecycle, from responsive interface design to server-side logic and database implementation."
     },
