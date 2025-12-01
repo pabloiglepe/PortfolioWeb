@@ -36,7 +36,7 @@ const experienciaData = [
     id: 3,
     puesto: { es: "Becario en Formación", en: "Trainee Intern" },
     empresa: "Konecta BTO SL",
-    duracion: { es: "02/12/2025 - Actualidad", en: "02/12/2025 - Present" },
+    duracion: { es: "18/03/2025 - 30/05/2025", en: "02/12/2025 - Present" },
     descripcion: {
       es: "Desarrollador Full-stack en prácticas, con una base de conocimiento que abarca el Front-end y Back-end. Colaboro activamente en el ciclo completo de desarrollo, desde la maquetación de interfaces responsive hasta la implementación de lógica del servidor y bases de datos", en: "Full-stack developer intern with a knowledge base covering both front-end and back-end development. I actively collaborate in the entire development lifecycle, from responsive interface design to server-side logic and database implementation."
     },
@@ -49,7 +49,7 @@ const experienciaData = [
 const proyectosData = [
   {
     id: 1,
-    nombre: { es: "Plantilla Web", en: "" },
+    nombre: { es: "Plantilla Web", en: "Website Template" },
     tecnologias: "HTML, Bootstrap, JavaScript, PHP",
     descripcion: { es: "Plantilla web de propósito general desarrollada con una estructura modular y escalable. Está diseñada para ser la base de cualquier tipo de sitio web, ofreciendo una presentación limpia, adaptable y fácil de personalizar.", en: "A website template developed with a modular and scalable structure. It is designed to be the foundation of any type of website, offering a clean, adaptable, and easily customizable presentation." },
     imageUrl: "/plantilla_web.png",
@@ -59,7 +59,7 @@ const proyectosData = [
   },
   {
     id: 2,
-    nombre: "Portfolio Web",
+    nombre: { es: "Portfolio Personal", en: "Personal Portfolio" },
     tecnologias: "React, Bootstrap, JavaScript",
     descripcion: { es: "Sitio web personal desarrollado para mostrar mi experiencia laboral, contacto, proyectos y habilidades técnicas de manera interactiva y responsive.", en: "Personal website developed to showcase my work experience, contact information, projects, and technical skills in an interactive and responsive manner." },
     imageUrl: "/portfolio_web.png",
